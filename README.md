@@ -34,82 +34,55 @@ telco-churn/
 └── README.md
 ```
 
-## 📊 Main Steps
+## ⚙️ Key Technologies
 
-### 1. Exploratory Data Analysis (EDA)
-- Categorical feature distribution and churn rates
-- Numerical variable patterns by churn (tenure, charges)
-- Correlation analysis
-- Outlier inspection and treatment strategy
-
-### 2. Feature Engineering
-- Binning of `tenure`
-- Derived features like `charges_per_month`
-- One-hot encoding for categorical variables
-
-### 3. Modeling
-- Baseline: Logistic Regression
-- Random Forest with hyperparameter tuning (`RandomizedSearchCV`)
-- Threshold optimization based on F1-Score
-- ROC AUC used as main evaluation metric
-
-### 4. Results
-
-| Model               | Accuracy | Precision | Recall | F1 Score | ROC AUC |
-|--------------------|----------|-----------|--------|----------|---------|
-| Logistic Regression| 0.7932   | 0.6334    | 0.5267 | 0.5752   | 0.8346  |
-| Random Forest (tuned) | 0.7910 | 0.6429    | 0.4813 | 0.5505   | 0.8361  |
-| Random Forest (threshold 0.35) | 0.7726 | 0.5547 | 0.7326 | 0.6313 | 0.8361 |
+- Python
+- Pandas, NumPy
+- Scikit-learn
+- XGBoost
+- Matplotlib, Seaborn
+- SHAP (tentado, mas não usado)
+- Jupyter Notebooks
+- Git & GitHub
 
 ---
 
-## 🔮 Deployment Simulation
+## 📈 Model Performance
 
-### ✅ Predict churn from new data
+- **Best model:** Tuned Random Forest  
+- **Test ROC AUC:** 0.8361  
+- **Test F1 Score:** 0.6313  
+- **Threshold optimized for recall and F1**
 
-The script `predict_churn.py` loads the trained pipeline and chosen threshold to classify churn for new customer data.
+---
 
-### ▶️ How to run:
+## 🧠 Highlights
 
-```bash
-# Step 1: Activate your environment (if applicable)
-# Step 2: Run the script
-python run_prediction.py
-```
+- Extensive EDA with visualizations and insights
+- Feature engineering and binning for tenure
+- Hyperparameter tuning with RandomizedSearchCV
+- Threshold adjustment for better business recall
+- Deployment-ready scripts for new customer prediction
 
-The script will:
+---
 
-- Load X_test_sample.joblib as sample input
+## 🚀 How to Run
 
-- Predict churn probabilities and labels
+1. Create virtual environment  
+   `python -m venv .venv`  
+2. Activate it and install dependencies  
+   `pip install -r requirements.txt`  
+3. Run predictions on sample data  
+   `python run_prediction.py`
 
-- Save results in data/predicted_from_test.csv
+---
 
-💾 Requirements
-To install dependencies:
+## 📦 Dataset
 
-```bash
-pip install -r requirements.txt
-```
+- [Kaggle: Telco Customer Churn](https://www.kaggle.com/datasets/blastchar/telco-customer-churn)
 
-📁 Files to Explore
-- 01_eda.ipynb: Full data analysis and preprocessing steps
+---
 
-- 02_modeling.ipynb: Model training, evaluation, and tuning
+## 👤 Author
 
-- predict_churn.py: Prediction script for unseen data
-
-- run_prediction.py: Example script for batch prediction
-
-- models/: Contains trained model and decision threshold
-
-🚀 Next Steps (Future Work)
-- Try SHAP for interpretability (currently incompatible with pipeline setup)
-
-- Export predictions to a web app (e.g., Streamlit or Flask)
-
-- Compare with gradient boosting (XGBoost, LightGBM) after tuning
-
-👨‍💻 Author
-João Gabriel Morato
-Data Scientist — Portfolio Project
+João Gabriel Morato  
