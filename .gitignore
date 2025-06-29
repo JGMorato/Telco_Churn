@@ -1,0 +1,22 @@
+# Ignorar ambientes virtuais
+.venv/
+env/
+venv/
+
+# Ignorar arquivos Python compilados
+*.pyc
+__pycache__/
+
+# Ignorar arquivos grandes e binários
+*.pkl
+*.joblib
+*.dll
+*.exe
+*.so
+*.zip
+
+# Ignorar checkpoints de notebooks
+.ipynb_checkpoints/
+
+# Ignorar configurações locais do VS Code (opcional)
+.vscode/
